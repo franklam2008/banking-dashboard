@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import styled from "styled-components";
+import Layout from "./components/Layout/Layout";
+import { ThemeProvider } from "@material-ui/styles";
+import Dashboard from "./view/Dashboard/Dashboard";
+import Products from "./view/Products/Products";
+import Contact from "./view/Contact/Contact";
+import Settings from "./view/Settings/Settings";
+import Account from "./view/Account/Account";
+import theme from "./theme";
+
+const AppCon = styled.div``;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <AppCon>
+        <Router>
+          <Layout>
+            <Route exact path="/" component={Dashboard} />
+            <Route path="/products" component={Products} />
+            {/* <Route path="/movieList" component={Dashboard} /> */}
+            <Route path="/account" component={Account} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/settings" component={Settings} />
+          </Layout>
+        </Router>
+      </AppCon>
+    </ThemeProvider>
   );
 }
 
