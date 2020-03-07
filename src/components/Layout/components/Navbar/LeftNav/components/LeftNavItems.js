@@ -4,14 +4,14 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
-import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
-import AccountBoxIcon from "@material-ui/icons/AccountBox";
-import SettingsIcon from "@material-ui/icons/Settings";
+import ShoppingBasketOutlinedIcon from "@material-ui/icons/ShoppingBasketOutlined";
+import DashboardOutlinedIcon from "@material-ui/icons/DashboardOutlined";
+import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
+import SupervisorAccountOutlinedIcon from '@material-ui/icons/SupervisorAccountOutlined';
+import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 import BarChartIcon from "@material-ui/icons/BarChart";
 import { useHistory } from "react-router-dom";
-
+import BuildOutlinedIcon from '@material-ui/icons/BuildOutlined';
 function ListItemLink(props) {
   return <ListItem button component="a" {...props} />;
 }
@@ -22,12 +22,12 @@ export default function SimpleList({ open }) {
     {
       title: "Dashboard",
       href: "/",
-      icon: <DashboardIcon />
+      icon: <DashboardOutlinedIcon />
     },
     {
       title: "Products",
       href: "/products",
-      icon: <ShoppingBasketIcon />
+      icon: <ShoppingBasketOutlinedIcon />
     },
     {
       title: "Orders",
@@ -37,22 +37,22 @@ export default function SimpleList({ open }) {
     {
       title: "Contact",
       href: "/contact",
-      icon: <LocationOnIcon />
+      icon: <SupervisorAccountOutlinedIcon />
     },
     {
       title: "Account",
       href: "/account",
-      icon: <AccountBoxIcon />
+      icon: <PersonOutlineOutlinedIcon />
     },
     {
       title: "Settings",
       href: "/settings",
-      icon: <SettingsIcon />
+      icon: <SettingsOutlinedIcon />
     },
     {
       title: "Test",
       href: "/Test",
-      icon: <SettingsIcon />
+      icon: <BuildOutlinedIcon />
     }
   ];
   const btnClick = page => {

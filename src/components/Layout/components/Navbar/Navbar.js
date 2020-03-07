@@ -42,7 +42,7 @@ export default function Navbar() {
   return (
     <NavbarCon>
       <Topbar open={open} setOpen={setOpen} />
-      <LeftNav open={open} id={open?'openLeftNav':null}/>
+      <LeftNav open={open} id={open ? "openLeftNav" : null} />
       <BottomNav />
     </NavbarCon>
   );
