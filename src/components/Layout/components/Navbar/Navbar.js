@@ -19,8 +19,11 @@ const NavbarCon = styled.div`
       opacity: 0;
       z-index: -99;
     }
-    .MuiListItemIcon-root {
-      min-width: 36px;
+ 
+    .MuiTypography-body1 {
+      font-size: 14px;
+      font-weight: 300;
+      padding-right:5px;
     }
   }
   .BottomNav {

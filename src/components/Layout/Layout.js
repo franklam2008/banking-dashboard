@@ -15,7 +15,7 @@ import Footer from "./components/Footer/Footer";
 const FullPage = styled.div`
 `;
 const MainCon = styled.div`
-  padding: 80px 20px 0 160px;
+  padding: 80px 20px 0 180px;
   background-color: #f2f5f7;
   min-height: 100vh;
   box-sizing: border-box;
