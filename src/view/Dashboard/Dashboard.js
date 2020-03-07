@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Typography, Button, Card } from "@material-ui/core";
+import { Grid, Typography, Button } from "@material-ui/core";
 import styled from "styled-components";
 import Budget from "./components/Budget/Budget";
 import TotalUsers from "./components/TotalUsers/TotalUsers";
@@ -12,7 +12,9 @@ import LatestSales from "./components/LatestSales/LatestSales";
 import UsersByDevice from "./components/UsersByDevice/UsersByDevice";
 import { useStore } from "../../Store/UserStore";
 import BarChartIcon from "@material-ui/icons/BarChart";
-import Carousel from "react-slick";
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -28,6 +30,13 @@ const ImgCon = styled.div`
   padding: 35px;
   img {
     height: 300px;
+    height: 300px;
+    @media (max-width: 960px) {
+      height: 200px;
+    }
+    @media (max-width: 600px) {
+      height: 150px;
+    }
   }
 `;
 const useStyles = makeStyles(theme => ({
@@ -36,14 +45,6 @@ const useStyles = makeStyles(theme => ({
   },
   menuButton: {
     marginRight: theme.spacing(2)
-  },
-  img: {},
-  title: {
-    // marginLeft: theme.spacing(2),
-    // display: "none",
-    // [theme.breakpoints.up("sm")]: {
-    //   display: "block"
-    // }
   },
   button: {
     width: 150
@@ -56,14 +57,13 @@ const Dashboard = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: false
+    slidesToShow: 4,
+    slidesToScroll: 1
   };
   return (
     <div>
       <Grid container spacing={4}>
-        <Grid item lg={4} md={6} xl={3} xs={12}>
+        <Grid item lg={4} md={6} xl={3} sm={6} xs={12}>
           <TitleCon>
             <Typography color="textSecondary">Dashboard</Typography>
             <Typography className={classes.title} variant="h4">
@@ -82,7 +82,7 @@ const Dashboard = () => {
             </Button>
           </TitleCon>
         </Grid>
-        <Grid item lg={8} md={6} xl={9} xs={12}>
+        <Grid item lg={8} md={6} xl={9} sm={6} xs={12}>
           <ImgCon>
             <img src="images/undraw_Data_points_ubvs.svg" alt="icon" />
           </ImgCon>
@@ -111,43 +111,31 @@ const Dashboard = () => {
         <Grid item lg={8} md={12} xl={9} xs={12}>
           <LatestOrders />
         </Grid>
-        <Card carousel>
-          <Carousel {...settings}>
-            <div>
-              <img
-                src="images/undraw_Data_points_ubvs.svg"
-                alt="First slide"
-                className="slick-image"
-                style={{width:'200px'}}
-              />
-              <div className="slick-caption">
-                <h4>Yellowstone National Park, United States</h4>
+        <Grid item lg={8} md={12} xl={9} xs={12}>
+          <div>
+            <h2> Single Item</h2>
+            <Slider {...settings}>
+              <div>
+                <h3>1</h3>
               </div>
-            </div>
-            <div>
-              <img
-                src="images/undraw_Data_points_ubvs.svg"
-                alt="Second slide"
-                className="slick-image"
-                style={{width:'200px'}}
-              />
-              <div className="slick-caption">
-                <h4>Somewhere Beyond, United States</h4>
+              <div>
+                <h3>2</h3>
               </div>
-            </div>
-            <div>
-              <img
-                src="images/undraw_Data_points_ubvs.svg"
-                alt="Third slide"
-                className="slick-image"
-                style={{width:'200px'}}
-              />
-              <div className="slick-caption">
-                <h4>Yellowstone National Park, United States</h4>
+              <div>
+                <h3>3</h3>
               </div>
-            </div>
-          </Carousel>
-        </Card>
+              <div>
+                <h3>4</h3>
+              </div>
+              <div>
+                <h3>5</h3>
+              </div>
+              <div>
+                <h3>6</h3>
+              </div>
+            </Slider>
+          </div>
+        </Grid>
       </Grid>
     </div>
   );

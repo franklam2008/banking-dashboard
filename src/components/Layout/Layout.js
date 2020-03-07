@@ -13,6 +13,7 @@ import styled from "styled-components";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 const FullPage = styled.div`
+  overflow-x: hidden;
 `;
 const MainCon = styled.div`
   padding: 80px 20px 0 180px;
@@ -21,7 +22,7 @@ const MainCon = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  @media (max-width: 768px) {
+  @media (max-width: 960px) {
     padding-left: 20px;
     padding-bottom: 40px;
   }
@@ -34,7 +35,7 @@ const Layout = ({ children }) => {
   return (
     <FullPage>
       <Navbar />
-      <MainCon >
+      <MainCon>
         <ViewCon>{children}</ViewCon>
         <Footer />
       </MainCon>

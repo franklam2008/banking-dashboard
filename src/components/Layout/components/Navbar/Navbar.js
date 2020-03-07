@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import BottomNav from "./BottomNav/BottomNav";
 import LeftNav from "./LeftNav/LeftNav";
+import MobileLeftDrawer from "./MobileLeftDrawer/MobileLeftDrawer";
 import Topbar from "./TopNav/TopNav";
 const NavbarCon = styled.div`
   display: flex;
@@ -15,11 +16,13 @@ const NavbarCon = styled.div`
     z-index: 99;
     height: 100vh;
     background-color: white;
-    @media (max-width: 768px) {
+    @media (max-width: 960px) {
       opacity: 0;
       z-index: -99;
     }
- 
+ .MuiListItemIcon-root{
+  min-width:35px;
+ }
     .MuiTypography-body1 {
       font-size: 14px;
       font-weight: 300;
@@ -33,7 +36,7 @@ const NavbarCon = styled.div`
     width: 100vw;
     margin: 0 auto;
     opacity: 0;
-    @media (max-width: 768px) {
+    @media (max-width: 960px) {
       z-index: 10;
       opacity: 1;
     }
@@ -41,11 +44,13 @@ const NavbarCon = styled.div`
 `;
 
 export default function Navbar() {
-  const [open, setOpen] = React.useState(true);
+  const [mobileDrawer, setMobileDrawer] = React.useState(false);
+
   return (
     <NavbarCon>
-      <Topbar open={open} setOpen={setOpen} />
-      <LeftNav open={open} id={open ? "openLeftNav" : null} />
+      <Topbar setOpen={setMobileDrawer}/>
+      <LeftNav  />
+      <MobileLeftDrawer open={mobileDrawer} setOpen={setMobileDrawer}/>
       <BottomNav />
     </NavbarCon>
   );
