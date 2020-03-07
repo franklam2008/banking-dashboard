@@ -1,12 +1,29 @@
 import React, { createContext, useReducer, useContext } from "react";
+import uuid from "uuid/v1";
 
 //state
 const defaultState = {
-  budget: '24,000',
-  totalUser: '1,600',
-  tasksProgress: 75.5,
-  totalProfit:'23,200',
-  orders:[],
+  budget: "24,000",
+  totalUser: "1,600",
+  tasksProgress: 55.5,
+  totalProfit: "23,200",
+  user: {
+    id: uuid(),
+    name: "Alexa Richardson",
+    progress: 70,
+    address: {
+      country: "USA",
+      state: "Georgia",
+      city: "Atlanta",
+      street: "4894  Lakeland Park Drive"
+    },
+    email: "alexa.richardson@devias.io",
+    phone: "770-635-2682",
+    avatarUrl: "/images/avatars/avatar_2.png",
+    createdAt: 1555016400000
+  },
+
+  orders: []
 };
 
 const UserContext = createContext(null);

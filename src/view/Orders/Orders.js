@@ -4,7 +4,6 @@ import { useStore } from "../../Store/UserStore";
 import { UsersToolbar, UsersTable } from "./components";
 import mockData from "./data";
 
-
 const UserList = () => {
   const { state, dispatch } = useStore();
 
@@ -14,14 +13,12 @@ const UserList = () => {
   }
   useEffect(() => {
     dispatch({ type: "InsertOrders", payload: users });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div>
       <UsersToolbar />
-      <div>
-        <UsersTable users={state.orders} />
-      </div>
+      <UsersTable users={state.orders} />
       <button onClick={click}> click</button>
     </div>
   );

@@ -74,7 +74,7 @@ const TasksProgress = props => {
         </Grid>
         <LinearProgress
           className={classes.progress}
-          value={75.5}
+          value={state.tasksProgress}
           variant="determinate"
         />
       </CardContent>

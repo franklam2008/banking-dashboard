@@ -2,10 +2,13 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 
 import { AccountProfile, AccountDetails } from './components';
+import { useStore } from "../../Store/UserStore";
 
 
 
 const Account = () => {
+  const { state } = useStore();
+
 
   return (
     <div >
@@ -20,7 +23,7 @@ const Account = () => {
           xl={4}
           xs={12}
         >
-          <AccountProfile />
+          <AccountProfile state={state}/>
         </Grid>
         <Grid
           item

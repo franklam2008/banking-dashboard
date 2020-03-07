@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
+import React from "react";
+import PropTypes from "prop-types";
+import clsx from "clsx";
 // import moment from 'moment';
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from "@material-ui/styles";
 import {
   Card,
   CardActions,
@@ -12,15 +12,15 @@ import {
   Divider,
   Button,
   LinearProgress
-} from '@material-ui/core';
+} from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   root: {},
   details: {
-    display: 'flex'
+    display: "flex"
   },
   avatar: {
-    marginLeft: 'auto',
+    marginLeft: "auto",
     height: 110,
     width: 100,
     flexShrink: 0,
@@ -35,67 +35,50 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const AccountProfile = props => {
-  const { className, ...rest } = props;
-
+  const { state, className, ...rest } = props;
   const classes = useStyles();
-
-  const user = {
-    name: 'Shen Zhi',
-    city: 'Los Angeles',
-    country: 'USA',
-    timezone: 'GTM-7',
-    avatar: '/images/avatars/avatar_11.png'
-  };
-
   return (
-    <Card
-      {...rest}
-      className={clsx(classes.root, className)}
-    >
+    <Card {...rest} className={clsx(classes.root, className)}>
       <CardContent>
         <div className={classes.details}>
           <div>
-            <Typography
-              gutterBottom
-              variant="h2"
-            >
-              John Doe
+            <Typography gutterBottom variant="h2">
+              {state.user.name}
             </Typography>
             <Typography
               className={classes.locationText}
               color="textSecondary"
               variant="body1"
             >
-              {user.city}, {user.country}
+              {state.user.address.city}, {state.user.address.state}
             </Typography>
             <Typography
-              className={classes.dateText}
+              className={classes.locationText}
               color="textSecondary"
               variant="body1"
             >
-              {/* {moment().format('hh:mm A')} ({user.timezone}) */}
+              tel: {state.user.phone}  
+            </Typography>
+            <Typography
+              className={classes.locationText}
+              color="textSecondary"
+              variant="body1"
+            >
+              email: {state.user.email}  
             </Typography>
           </div>
-          <Avatar
-            className={classes.avatar}
-            src={user.avatar}
-          />
+          <Avatar className={classes.avatar} src={state.user.avatarUrl} />
         </div>
         <div className={classes.progress}>
-          <Typography variant="body1">Profile Completeness: 70%</Typography>
-          <LinearProgress
-            value={70}
-            variant="determinate"
-          />
+          <Typography variant="body1">
+            Profile Completeness: {state.user.progress}%
+          </Typography>
+          <LinearProgress value={state.user.progress} variant="determinate" />
         </div>
       </CardContent>
       <Divider />
       <CardActions>
-        <Button
-          className={classes.uploadButton}
-          color="primary"
-          variant="text"
-        >
+        <Button className={classes.uploadButton} color="primary" variant="text">
           Upload picture
         </Button>
         <Button variant="text">Remove picture</Button>

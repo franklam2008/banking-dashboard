@@ -12,6 +12,7 @@ const useStyles = makeStyles(theme => ({
     height: '42px',
     display: 'flex',
     alignItems: 'center',
+    marginBottom: theme.spacing(1)
   },
   spacer: {
     flexGrow: 1
@@ -45,15 +46,10 @@ const UsersToolbar = props => {
           color="primary"
           variant="contained"
         >
-          Add user
+          New Order
         </Button>
       </div>
-      <div className={classes.row}>
-        {/* <SearchInput
-          className={classes.searchInput}
-          placeholder="Search user"
-        /> */}
-      </div>
+     
     </div>
   );
 };

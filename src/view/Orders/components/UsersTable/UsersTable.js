@@ -113,11 +113,11 @@ const UsersTable = props => {
                       onChange={handleSelectAll}
                     />
                   </TableCell>
-                  <TableCell>Name</TableCell>
-                  <TableCell>Email</TableCell>
-                  <TableCell>Location</TableCell>
+                  <TableCell>Client Name</TableCell>
+                  <TableCell>Total Price</TableCell>
+                  <TableCell>Order Number</TableCell>
                   <TableCell>Phone</TableCell>
-                  <TableCell>Registration date</TableCell>
+                  <TableCell>Purchase Date</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>

@@ -11,7 +11,6 @@ import LatestProducts from "./components/LatestProducts/LatestProducts";
 import LatestSales from "./components/LatestSales/LatestSales";
 import UsersByDevice from "./components/UsersByDevice/UsersByDevice";
 const TitleCon = styled.div`
-  display: flex;
  
 `;
 const useStyles = makeStyles(theme => ({
@@ -22,11 +21,11 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(2)
   },
   title: {
-    marginLeft: theme.spacing(2),
-    display: "none",
-    [theme.breakpoints.up("sm")]: {
-      display: "block"
-    }
+    // marginLeft: theme.spacing(2),
+    // display: "none",
+    // [theme.breakpoints.up("sm")]: {
+    //   display: "block"
+    // }
   }
 }));
 const Dashboard = () => {
