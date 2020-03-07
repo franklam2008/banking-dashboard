@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { Card, CardContent, Grid, Typography, Avatar } from '@material-ui/core';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import { useStore } from "../../../../Store/UserStore";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -32,6 +33,7 @@ const useStyles = makeStyles(theme => ({
 
 const TotalProfit = props => {
   const { className, ...rest } = props;
+  const { state, } = useStore();
 
   const classes = useStyles();
 
@@ -58,7 +60,7 @@ const TotalProfit = props => {
               color="inherit"
               variant="h3"
             >
-              $23,200
+              ${state.totalProfit}
             </Typography>
           </Grid>
           <Grid item>

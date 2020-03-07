@@ -11,6 +11,7 @@ import {
   LinearProgress
 } from '@material-ui/core';
 import InsertChartIcon from '@material-ui/icons/InsertChartOutlined';
+import { useStore } from "../../../../Store/UserStore";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -40,6 +41,7 @@ const useStyles = makeStyles(theme => ({
 
 const TasksProgress = props => {
   const { className, ...rest } = props;
+  const { state } = useStore();
 
   const classes = useStyles();
 
@@ -62,7 +64,7 @@ const TasksProgress = props => {
             >
               TASKS PROGRESS
             </Typography>
-            <Typography variant="h3">75.5%</Typography>
+            <Typography variant="h3">{state.tasksProgress}%</Typography>
           </Grid>
           <Grid item>
             <Avatar className={classes.avatar}>

@@ -1,34 +1,17 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/styles';
 import { Grid } from '@material-ui/core';
 import Budget from './components/Budget/Budget';
 import TotalUsers from './components/TotalUsers/TotalUsers';
 import TasksProgress from './components/TasksProgress/TasksProgress';
 import TotalProfit from './components/TotalProfit/TotalProfit';
 import LatestOrders from './components/LatestOrders/LatestOrders';
-
-// import {
-//   Budget,
-//   TotalUsers,
-//   TasksProgress,
-//   TotalProfit,
-//   LatestSales,
-//   UsersByDevice,
-//   LatestProducts,
-//   LatestOrders
-// } from './components';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    padding: theme.spacing(4)
-  }
-}));
+import LatestProducts from './components/LatestProducts/LatestProducts';
+import LatestSales from './components/LatestSales/LatestSales';
+import UsersByDevice from './components/UsersByDevice/UsersByDevice';
 
 const Dashboard = () => {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
+    <div>
       <Grid
         container
         spacing={4}
@@ -76,7 +59,7 @@ const Dashboard = () => {
           xl={9}
           xs={12}
         >
-          {/* <LatestSales /> */}
+          <LatestSales />
         </Grid>
         <Grid
           item
@@ -85,7 +68,7 @@ const Dashboard = () => {
           xl={3}
           xs={12}
         >
-          {/* <UsersByDevice /> */}
+          <UsersByDevice />
         </Grid>
         <Grid
           item
@@ -94,7 +77,7 @@ const Dashboard = () => {
           xl={3}
           xs={12}
         >
-          {/* <LatestProducts /> */}
+          <LatestProducts />
         </Grid>
         <Grid
           item

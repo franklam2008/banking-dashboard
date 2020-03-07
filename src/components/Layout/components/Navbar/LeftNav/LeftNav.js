@@ -1,9 +1,11 @@
 import React from "react";
 import LeftNavItems from "./components/LeftNavItems";
-export default function VerticalTabs() {
+
+export default function VerticalTabs({open}) {
+ 
   return (
     <div className="LeftNav">
-      <LeftNavItems />
+      <LeftNavItems open={open}/>
     </div>
   );
 }

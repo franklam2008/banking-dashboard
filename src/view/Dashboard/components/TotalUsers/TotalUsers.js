@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/styles';
 import { Card, CardContent, Grid, Typography, Avatar } from '@material-ui/core';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import PeopleIcon from '@material-ui/icons/PeopleOutlined';
+import { useStore } from "../../../../Store/UserStore";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -42,6 +43,7 @@ const useStyles = makeStyles(theme => ({
 
 const TotalUsers = props => {
   const { className, ...rest } = props;
+  const { state } = useStore();
 
   const classes = useStyles();
 
@@ -64,7 +66,7 @@ const TotalUsers = props => {
             >
               TOTAL USERS
             </Typography>
-            <Typography variant="h3">1,600</Typography>
+            <Typography variant="h3">{state.totalUser}</Typography>
           </Grid>
           <Grid item>
             <Avatar className={classes.avatar}>

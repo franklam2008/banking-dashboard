@@ -1,5 +1,5 @@
 import React from 'react';
-import { Doughnut } from 'react-chartjs-2';
+// import { Doughnut } from 'react-chartjs-2';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles, useTheme } from '@material-ui/styles';
@@ -44,44 +44,44 @@ const UsersByDevice = props => {
   const classes = useStyles();
   const theme = useTheme();
 
-  const data = {
-    datasets: [
-      {
-        data: [63, 15, 22],
-        backgroundColor: [
-          theme.palette.primary.main,
-          theme.palette.error.main,
-          theme.palette.warning.main
-        ],
-        borderWidth: 8,
-        borderColor: theme.palette.white,
-        hoverBorderColor: theme.palette.white
-      }
-    ],
-    labels: ['Desktop', 'Tablet', 'Mobile']
-  };
+  // const data = {
+  //   datasets: [
+  //     {
+  //       data: [63, 15, 22],
+  //       backgroundColor: [
+  //         theme.palette.primary.main,
+  //         theme.palette.error.main,
+  //         theme.palette.warning.main
+  //       ],
+  //       borderWidth: 8,
+  //       borderColor: theme.palette.white,
+  //       hoverBorderColor: theme.palette.white
+  //     }
+  //   ],
+  //   labels: ['Desktop', 'Tablet', 'Mobile']
+  // };
 
-  const options = {
-    legend: {
-      display: false
-    },
-    responsive: true,
-    maintainAspectRatio: false,
-    animation: false,
-    cutoutPercentage: 80,
-    layout: { padding: 0 },
-    tooltips: {
-      enabled: true,
-      mode: 'index',
-      intersect: false,
-      borderWidth: 1,
-      borderColor: theme.palette.divider,
-      backgroundColor: theme.palette.white,
-      titleFontColor: theme.palette.text.primary,
-      bodyFontColor: theme.palette.text.secondary,
-      footerFontColor: theme.palette.text.secondary
-    }
-  };
+  // const options = {
+  //   legend: {
+  //     display: false
+  //   },
+  //   responsive: true,
+  //   maintainAspectRatio: false,
+  //   animation: false,
+  //   cutoutPercentage: 80,
+  //   layout: { padding: 0 },
+  //   tooltips: {
+  //     enabled: true,
+  //     mode: 'index',
+  //     intersect: false,
+  //     borderWidth: 1,
+  //     borderColor: theme.palette.divider,
+  //     backgroundColor: theme.palette.white,
+  //     titleFontColor: theme.palette.text.primary,
+  //     bodyFontColor: theme.palette.text.secondary,
+  //     footerFontColor: theme.palette.text.secondary
+  //   }
+  // };
 
   const devices = [
     {
@@ -120,10 +120,10 @@ const UsersByDevice = props => {
       <Divider />
       <CardContent>
         <div className={classes.chartContainer}>
-          <Doughnut
+          {/* <Doughnut
             data={data}
             options={options}
-          />
+          /> */}
         </div>
         <div className={classes.stats}>
           {devices.map(device => (

@@ -10,22 +10,20 @@ import React from "react";
 import styled from "styled-components";
 //css
 // import TopNav from "../Navbar/TopNav";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 const FullPage = styled.div`
-  min-height: 100vh;
-  display: flex;
-  .LeftNav {
-  }
 `;
 const MainCon = styled.div`
+  padding: 80px 20px 0 160px;
+  background-color: #f2f5f7;
+  min-height: 100vh;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  flex: 1;
-  padding-left:200px;
-  width:100vw;
-  overflow-x:hidden;
-  @media(max-width: 768px) {
-    padding-left:0px;
+  @media (max-width: 768px) {
+    padding-left: 20px;
+    padding-bottom: 40px;
   }
 `;
 const ViewCon = styled.div`
@@ -35,10 +33,10 @@ const ViewCon = styled.div`
 const Layout = ({ children }) => {
   return (
     <FullPage>
-      {/* <Topbar /> */}
       <Navbar />
-      <MainCon>
+      <MainCon >
         <ViewCon>{children}</ViewCon>
+        <Footer />
       </MainCon>
     </FullPage>
   );

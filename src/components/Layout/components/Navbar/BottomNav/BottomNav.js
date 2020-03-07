@@ -35,8 +35,8 @@ export default function SimpleBottomNavigation() {
           icon={<LocationOnIcon />}
         />
         <BottomNavigationAction
-          label="Setting"
-          value="/setting"
+          label="Settings"
+          value="/settings"
           icon={<SettingsIcon />}
         />
       </BottomNavigation>
