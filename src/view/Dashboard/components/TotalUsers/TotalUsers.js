@@ -67,14 +67,7 @@ const TotalUsers = props => {
               TOTAL USERS
             </Typography>
             <Typography variant="h3">{state.totalUser}</Typography>
-          </Grid>
-          <Grid item>
-            <Avatar className={classes.avatar}>
-              <PeopleIcon className={classes.icon} />
-            </Avatar>
-          </Grid>
-        </Grid>
-        <div className={classes.difference}>
+            <div className={classes.difference}>
           <ArrowUpwardIcon className={classes.differenceIcon} />
           <Typography
             className={classes.differenceValue}
@@ -89,6 +82,14 @@ const TotalUsers = props => {
             Since last month
           </Typography>
         </div>
+          </Grid>
+          <Grid item>
+            <Avatar className={classes.avatar}>
+              <PeopleIcon className={classes.icon} />
+            </Avatar>
+          </Grid>
+        </Grid>
+        
       </CardContent>
     </Card>
   );

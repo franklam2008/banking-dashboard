@@ -13,6 +13,7 @@ import UsersByDevice from "./components/UsersByDevice/UsersByDevice";
 import { useStore } from "../../Store/UserStore";
 import BarChartIcon from "@material-ui/icons/BarChart";
 import Slider from "react-slick";
+import { useHistory } from "react-router-dom";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick.css";
@@ -52,6 +53,7 @@ const useStyles = makeStyles(theme => ({
 }));
 const Dashboard = () => {
   const { state } = useStore();
+  let history = useHistory();
   const classes = useStyles();
   const settings = {
     dots: true,
@@ -77,6 +79,7 @@ const Dashboard = () => {
               color="primary"
               className={classes.button}
               startIcon={<BarChartIcon />}
+              onClick={()=>{history.push('/orders');}}
             >
               View Orders
             </Button>

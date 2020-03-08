@@ -61,14 +61,7 @@ const Budget = props => {
               BUDGET
             </Typography>
             <Typography variant="h3">${state.budget}</Typography>
-          </Grid>
-          <Grid item>
-            <Avatar className={classes.avatar}>
-              <MoneyIcon className={classes.icon} />
-            </Avatar>
-          </Grid>
-        </Grid>
-        <div className={classes.difference}>
+            <div className={classes.difference}>
           <ArrowDownwardIcon className={classes.differenceIcon} />
           <Typography className={classes.differenceValue} variant="body2">
             12%
@@ -77,6 +70,14 @@ const Budget = props => {
             Since last month
           </Typography>
         </div>
+          </Grid>
+          <Grid item >
+            <Avatar className={classes.avatar}>
+              <MoneyIcon className={classes.icon} />
+            </Avatar>
+          </Grid>
+        </Grid>
+        
       </CardContent>
     </Card>
   );
