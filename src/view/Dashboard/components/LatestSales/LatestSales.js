@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-// import { Bar } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 import { makeStyles } from '@material-ui/styles';
 import {
   Card,
@@ -14,7 +14,7 @@ import {
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
-// import { data, options } from './chart';
+import { data, options } from './chart';
 
 const useStyles = makeStyles(() => ({
   root: {},
@@ -51,10 +51,10 @@ const LatestSales = props => {
       <Divider />
       <CardContent>
         <div className={classes.chartContainer}>
-          {/* <Bar
+          <Bar
             data={data}
             options={options}
-          /> */}
+          />
         </div>
       </CardContent>
       <Divider />
