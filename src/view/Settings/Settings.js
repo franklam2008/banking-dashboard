@@ -1,31 +1,24 @@
-import React from 'react';
-import { Grid } from '@material-ui/core';
+import React from "react";
+import { Grid } from "@material-ui/core";
 
-import { Notifications, Password } from './components';
+import Notifications  from "./components/Notifications/Notifications";
+import Password  from "./components/Password/Password";
+import VSensorjs from "../../components/VisibilitySensor";
 
 const Settings = () => {
   return (
-    <div >
-      <Grid
-        container
-        spacing={4}
-      >
-        <Grid
-          item
-          md={7}
-          xs={12}
-        >
-          <Notifications />
+    <VSensorjs>
+      <div>
+        <Grid container spacing={4}>
+          <Grid item md={7} xs={12}>
+            <Notifications />
+          </Grid>
+          <Grid item md={5} xs={12}>
+            <Password />
+          </Grid>
         </Grid>
-        <Grid
-          item
-          md={5}
-          xs={12}
-        >
-          <Password />
-        </Grid>
-      </Grid>
-    </div>
+      </div>
+    </VSensorjs>
   );
 };
 

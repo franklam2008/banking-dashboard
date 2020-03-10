@@ -14,6 +14,7 @@ import { useStore } from "../../Store/UserStore";
 import BarChartIcon from "@material-ui/icons/BarChart";
 import Slider from "react-slick";
 import { useHistory } from "react-router-dom";
+import VSensorjs from "../../components/VisibilitySensor"
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick.css";
@@ -48,7 +49,7 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(2)
   },
   button: {
-    width: 150
+    width: 210
   }
 }));
 const Dashboard = () => {
@@ -64,6 +65,8 @@ const Dashboard = () => {
   };
   return (
     <div>
+      <VSensorjs>
+
       <Grid container spacing={4}>
         <Grid item lg={4} md={6} xl={3} sm={6} xs={12}>
           <TitleCon>
@@ -81,7 +84,7 @@ const Dashboard = () => {
               startIcon={<BarChartIcon />}
               onClick={()=>{history.push('/orders');}}
             >
-              View Orders
+              View Transactions
             </Button>
           </TitleCon>
         </Grid>
@@ -140,6 +143,8 @@ const Dashboard = () => {
           </div>
         </Grid>
       </Grid>
+      </VSensorjs>
+
     </div>
   );
 };

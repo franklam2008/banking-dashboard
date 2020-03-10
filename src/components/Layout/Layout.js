@@ -12,11 +12,12 @@ import styled from "styled-components";
 // import TopNav from "../Navbar/TopNav";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+
 const FullPage = styled.div`
   overflow-x: hidden;
 `;
 const MainCon = styled.div`
-  padding: 80px 20px 0 180px;
+  padding: 90px 20px 0 180px;
   background-color: #f2f5f7;
   min-height: 100vh;
   box-sizing: border-box;
@@ -31,12 +32,16 @@ const ViewCon = styled.div`
   flex: 1;
 `;
 
+
 const Layout = ({ children }) => {
   return (
     <FullPage>
       <Navbar />
       <MainCon>
-        <ViewCon>{children}</ViewCon>
+        <ViewCon>
+            {children}
+        </ViewCon>
+
         <Footer />
       </MainCon>
     </FullPage>

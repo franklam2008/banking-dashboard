@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import clsx from 'clsx';
-import moment from 'moment';
-import PerfectScrollbar from 'react-perfect-scrollbar';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/styles';
+import React, { useState } from "react";
+import clsx from "clsx";
+import moment from "moment";
+import PerfectScrollbar from "react-perfect-scrollbar";
+import PropTypes from "prop-types";
+import { makeStyles } from "@material-ui/styles";
 import {
   Card,
   CardActions,
@@ -18,10 +18,11 @@ import {
   TableRow,
   Tooltip,
   TableSortLabel
-} from '@material-ui/core';
-import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+} from "@material-ui/core";
+import ArrowRightIcon from "@material-ui/icons/ArrowRight";
+import { useHistory } from "react-router-dom";
 
-import mockData from './data';
+import mockData from "../../../Orders/data";
 // import { StatusBullet } from 'components';
 
 const useStyles = makeStyles(theme => ({
@@ -33,14 +34,14 @@ const useStyles = makeStyles(theme => ({
     minWidth: 800
   },
   statusContainer: {
-    display: 'flex',
-    alignItems: 'center'
+    display: "flex",
+    alignItems: "center"
   },
   status: {
     marginRight: theme.spacing(1)
   },
   actions: {
-    justifyContent: 'flex-end'
+    justifyContent: "flex-end"
   }
 }));
 
@@ -54,21 +55,15 @@ const LatestOrders = props => {
   const { className, ...rest } = props;
 
   const classes = useStyles();
+  let history = useHistory();
 
   const [orders] = useState(mockData);
 
   return (
-    <Card
-      {...rest}
-      className={clsx(classes.root, className)}
-    >
+    <Card {...rest} className={clsx(classes.root, className)}>
       <CardHeader
         action={
-          <Button
-            color="primary"
-            size="small"
-            variant="outlined"
-          >
+          <Button color="primary" size="small" variant="outlined">
             New entry
           </Button>
         }
@@ -81,45 +76,32 @@ const LatestOrders = props => {
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableCell>Order Ref</TableCell>
-                  <TableCell>Customer</TableCell>
                   <TableCell sortDirection="desc">
-                    <Tooltip
-                      enterDelay={300}
-                      title="Sort"
-                    >
-                      <TableSortLabel
-                        active
-                        direction="desc"
-                      >
-                        Date
+                    <Tooltip enterDelay={300} title="Sort">
+                      <TableSortLabel active direction="desc">
+                        Posting Date
                       </TableSortLabel>
                     </Tooltip>
                   </TableCell>
+                  <TableCell>Description</TableCell>
+                  <TableCell>Type</TableCell>
+
                   <TableCell>Status</TableCell>
+                  <TableCell>Amount</TableCell>
+                  <TableCell>Available Balance</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {orders.map(order => (
-                  <TableRow
-                    hover
-                    key={order.id}
-                  >
-                    <TableCell>{order.ref}</TableCell>
-                    <TableCell>{order.customer.name}</TableCell>
+                  <TableRow hover key={order.id}>
                     <TableCell>
-                      {moment(order.createdAt).format('DD/MM/YYYY')}
+                      {moment(order.createdAt).format("DD/MM/YYYY")}
                     </TableCell>
-                    <TableCell>
-                      <div className={classes.statusContainer}>
-                        {/* <StatusBullet
-                          className={classes.status}
-                          color={statusColors[order.status]}
-                          size="sm"
-                        /> */}
-                        {order.status}
-                      </div>
-                    </TableCell>
+                    <TableCell>{order.desc}</TableCell>
+                    <TableCell>{order.type}</TableCell>
+                    <TableCell>{order.status}</TableCell>
+                    <TableCell>{order.amount}</TableCell>
+                    <TableCell>{order.balance}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -129,11 +111,7 @@ const LatestOrders = props => {
       </CardContent>
       <Divider />
       <CardActions className={classes.actions}>
-        <Button
-          color="primary"
-          size="small"
-          variant="text"
-        >
+        <Button color="primary" size="small" variant="text" onClick={()=>{history.push('/orders');}}>
           View all <ArrowRightIcon />
         </Button>
       </CardActions>
