@@ -72,7 +72,7 @@ const Dashboard = () => {
           <TitleCon>
             <Typography color="textSecondary">Dashboard</Typography>
             <Typography className={classes.title} variant="h4">
-              1Good Morning, {state.user.name}
+              Good Morning, {state.user.name}
             </Typography>
             <Typography color="textSecondary" gutterBottom>
               Here's what's happening
