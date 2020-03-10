@@ -60,7 +60,7 @@ const LatestOrders = props => {
               New entry
             </Button>
           }
-          title="Latest Orders"
+          title="Latest Transaction"
         />
         <Divider />
         <CardContent className={classes.content}>
