@@ -19,8 +19,8 @@ export default [
       icon: <ShoppingBasketOutlinedIcon />
     },
     {
-      title: "Orders",
-      href: "/orders",
+      title: "Transactions",
+      href: "/Transactions",
       icon: <BarChartIcon />
     },
     {

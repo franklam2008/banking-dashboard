@@ -7,9 +7,9 @@ import Dashboard from "./view/Dashboard/Dashboard";
 import Products from "./view/Products/Products";
 import Contact from "./view/Contact/Contact";
 import Settings from "./view/Settings/Settings";
-import Orders from "./view/Orders/Orders";
+import Transactions from "./view/Transactions/Transactions";
 import Test from "./view/Test/Test";
-import Account from "./view/Account/Account";
+import Accounts from "./view/Accounts/Accounts";
 import { UserProvider } from "./Store/UserStore";
 import theme from "./theme";
 const AppCon = styled.div``;
@@ -23,8 +23,8 @@ function App() {
             <Layout>
               <Route exact path="/" component={Dashboard} />
               <Route path="/Products" component={Products} />
-              <Route path="/Account" component={Account} />
-              <Route path="/Orders" component={Orders} />
+              <Route path="/Accounts" component={Accounts} />
+              <Route path="/Transactions" component={Transactions} />
               <Route path="/Contact" component={Contact} />
               <Route path="/Settings" component={Settings} />
               <Route path="/Test" component={Test} />

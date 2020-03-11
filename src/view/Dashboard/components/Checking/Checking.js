@@ -3,9 +3,9 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/styles";
 import { Card, CardContent, Grid, Typography, Avatar } from "@material-ui/core";
-import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import MoneyIcon from "@material-ui/icons/Money";
 import { useStore } from "../../../../Store/UserStore";
+import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,10 +16,10 @@ const useStyles = makeStyles(theme => ({
     display: "flex"
   },
   title: {
-    fontWeight: 700
+    fontWeight: 400
   },
   avatar: {
-    backgroundColor: theme.palette.error.main,
+    backgroundColor: theme.palette.primary.main,
     height: 56,
     width: 56
   },
@@ -33,20 +33,18 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center"
   },
   differenceIcon: {
-    color: theme.palette.error.dark
+    color: theme.palette.success.dark
   },
   differenceValue: {
-    color: theme.palette.error.dark,
+    color: theme.palette.success.dark,
     marginRight: theme.spacing(1)
   }
 }));
 
-const Budget = props => {
+const Checking = props => {
   const { className, ...rest } = props;
-
   const { state } = useStore();
   const classes = useStyles();
-
   return (
     <Card {...rest} className={clsx(classes.root, className)}>
       <CardContent>
@@ -56,35 +54,34 @@ const Budget = props => {
               className={classes.title}
               color="textSecondary"
               gutterBottom
-              variant="body2"
+              variant="h5"
             >
-              BUDGET
+              Checking Account
             </Typography>
-            <Typography variant="h3">${state.budget}</Typography>
+            <Typography variant="h5">${state.checking}</Typography>
             <div className={classes.difference}>
-          <ArrowDownwardIcon className={classes.differenceIcon} />
-          <Typography className={classes.differenceValue} variant="body2">
-            12%
-          </Typography>
-          <Typography className={classes.caption} variant="caption">
-            Since last month
-          </Typography>
-        </div>
+              <ArrowUpwardIcon className={classes.differenceIcon} />
+              <Typography className={classes.differenceValue} variant="body2">
+                12%
+              </Typography>
+              <Typography className={classes.caption} variant="caption">
+                Since last month
+              </Typography>
+            </div>
           </Grid>
-          <Grid item >
+          <Grid item>
             <Avatar className={classes.avatar}>
               <MoneyIcon className={classes.icon} />
             </Avatar>
           </Grid>
         </Grid>
-        
       </CardContent>
     </Card>
   );
 };
 
-Budget.propTypes = {
+Checking.propTypes = {
   className: PropTypes.string
 };
 
-export default Budget;
+export default Checking;

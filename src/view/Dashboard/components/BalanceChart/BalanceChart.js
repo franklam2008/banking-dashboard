@@ -14,7 +14,8 @@ import {
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
-import { data, options } from './chart';
+import { options } from './chart';
+import { data } from '../../../../Store/assetChart';
 
 const useStyles = makeStyles(() => ({
   root: {},
@@ -27,7 +28,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const LatestSales = props => {
+const BalanceChart = props => {
   const { className, ...rest } = props;
 
   const classes = useStyles();
@@ -43,10 +44,10 @@ const LatestSales = props => {
             size="small"
             variant="text"
           >
-            Last 7 days <ArrowDropDownIcon />
+            Last Year <ArrowDropDownIcon />
           </Button>
         }
-        title="Latest Sales"
+        title="Balance"
       />
       <Divider />
       <CardContent>
@@ -71,8 +72,8 @@ const LatestSales = props => {
   );
 };
 
-LatestSales.propTypes = {
+BalanceChart.propTypes = {
   className: PropTypes.string
 };
 
-export default LatestSales;
+export default BalanceChart;

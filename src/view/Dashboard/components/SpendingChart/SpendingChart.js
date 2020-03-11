@@ -7,11 +7,9 @@ import {
   Card,
   CardHeader,
   CardContent,
-  IconButton,
   Divider,
   Typography
 } from '@material-ui/core';
-import RefreshIcon from '@material-ui/icons/Refresh';
 import { data, options, devices } from './chart';
 
 const useStyles = makeStyles(theme => ({
@@ -36,7 +34,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const UsersByDevice = props => {
+const SpendingChart = props => {
   const { className } = props;
   const classes = useStyles();
 
@@ -45,12 +43,7 @@ const UsersByDevice = props => {
       className={clsx(classes.root, className)}
     >
       <CardHeader
-        action={
-          <IconButton size="small">
-            <RefreshIcon />
-          </IconButton>
-        }
-        title="Users By Device"
+        title="Spending"
       />
       <Divider />
       <CardContent>
@@ -82,8 +75,8 @@ const UsersByDevice = props => {
   );
 };
 
-UsersByDevice.propTypes = {
+SpendingChart.propTypes = {
   className: PropTypes.string
 };
 
-export default UsersByDevice;
+export default SpendingChart;

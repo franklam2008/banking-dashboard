@@ -3,10 +3,10 @@ import uuid from "uuid/v1";
 
 //state
 const defaultState = {
-  budget: "24,000",
-  totalUser: "1,600",
-  tasksProgress: 55.5,
-  totalProfit: "23,200",
+  checking: "5,250",
+  credit: "1,600",
+  savingProgress: "20,600",
+  invest: "283,200",
   user: {
     id: uuid(),
     name: "Alexa Richardson",

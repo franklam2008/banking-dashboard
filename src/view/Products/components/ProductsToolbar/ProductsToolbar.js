@@ -43,7 +43,7 @@ const ProductsToolbar = props => {
           color="primary"
           variant="contained"
         >
-          Add product
+          Add 
         </Button>
       </div>
   

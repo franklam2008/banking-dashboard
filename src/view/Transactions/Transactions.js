@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const LatestOrders = props => {
+const Transactions = props => {
   const { className } = props;
 
   const classes = useStyles();
@@ -70,7 +70,7 @@ const LatestOrders = props => {
                 <TableHead>
                   <TableRow>
                     <TableCell sortDirection="desc">
-                      <Tooltip enterDelay={300} title="Sort">
+                      <Tooltip enterDelay={300} title="Sorting">
                         <TableSortLabel active direction="desc">
                           Posting Date
                         </TableSortLabel>
@@ -113,8 +113,8 @@ const LatestOrders = props => {
   );
 };
 
-LatestOrders.propTypes = {
+Transactions.propTypes = {
   className: PropTypes.string
 };
 
-export default LatestOrders;
+export default Transactions;

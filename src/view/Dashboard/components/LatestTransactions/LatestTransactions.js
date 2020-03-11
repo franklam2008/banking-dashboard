@@ -22,7 +22,7 @@ import {
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import { useHistory } from "react-router-dom";
 
-import mockData from "../../../Orders/data";
+import mockData from "../../../Transactions/data";
 // import { StatusBullet } from 'components';
 
 const useStyles = makeStyles(theme => ({
@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
 //   refunded: 'danger'
 // };
 
-const LatestOrders = props => {
+const LatestTransactions = props => {
   const { className, ...rest } = props;
 
   const classes = useStyles();
@@ -67,7 +67,7 @@ const LatestOrders = props => {
             New entry
           </Button>
         }
-        title="Latest Transaction"
+        title="Latest Transactions"
       />
       <Divider />
       <CardContent className={classes.content}>
@@ -119,8 +119,8 @@ const LatestOrders = props => {
   );
 };
 
-LatestOrders.propTypes = {
+LatestTransactions.propTypes = {
   className: PropTypes.string
 };
 
-export default LatestOrders;
+export default LatestTransactions;

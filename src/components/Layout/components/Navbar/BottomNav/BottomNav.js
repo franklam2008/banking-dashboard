@@ -1,11 +1,11 @@
 import React from "react";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
-import SettingsIcon from "@material-ui/icons/Settings";
-import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import AccountBalanceOutlinedIcon from "@material-ui/icons/AccountBalanceOutlined";
+import DashboardOutlinedIcon from "@material-ui/icons/DashboardOutlined";
+import ListIcon from "@material-ui/icons/List";
 import { useHistory } from "react-router-dom";
+import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
 export default function SimpleBottomNavigation() {
   const [value, setValue] = React.useState(0);
   let history = useHistory();
@@ -22,22 +22,22 @@ export default function SimpleBottomNavigation() {
         <BottomNavigationAction
           label="Dashboard"
           value="/"
-          icon={<DashboardIcon />}
+          icon={<DashboardOutlinedIcon />}
         />
         <BottomNavigationAction
-          label="products"
-          value="/products"
-          icon={<ShoppingBasketIcon />}
+          label="Transactions"
+          value="/Transactions"
+          icon={<ListIcon />}
         />
         <BottomNavigationAction
-          label="contact"
-          value="/contact"
-          icon={<LocationOnIcon />}
+          label="Accounts"
+          value="/accounts"
+          icon={<AccountBalanceOutlinedIcon />}
         />
         <BottomNavigationAction
           label="Settings"
           value="/settings"
-          icon={<SettingsIcon />}
+          icon={<SettingsOutlinedIcon />}
         />
       </BottomNavigation>
     </div>
