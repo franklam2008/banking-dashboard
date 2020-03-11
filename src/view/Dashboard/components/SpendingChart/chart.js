@@ -1,9 +1,6 @@
-import React from "react";
-import TabletMacIcon from "@material-ui/icons/TabletMac";
-import LaptopMacIcon from "@material-ui/icons/LaptopMac";
-import PhoneIphoneIcon from "@material-ui/icons/PhoneIphone";
+
 export const data = {
-  labels: ["Desktop", "Tablet", "Mobile"],
+  labels: ["Rent", "Daily", "Insurance"],
   datasets: [
     {
       data: [63, 15, 23],
@@ -30,21 +27,18 @@ export const options = {
 };
 export const devices = [
   {
-    title: "Desktop",
+    title: "Rent",
     value: "63",
-    icon: <LaptopMacIcon />,
     color: "#FF6384"
   },
   {
-    title: "Tablet",
+    title: "Daily",
     value: "15",
-    icon: <TabletMacIcon />,
     color: "#36A2EB"
   },
   {
-    title: "Mobile",
+    title: "Insurance",
     value: "23",
-    icon: <PhoneIphoneIcon />,
     color: "#FFCE56"
   }
 ];

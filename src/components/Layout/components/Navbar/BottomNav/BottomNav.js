@@ -30,8 +30,8 @@ export default function SimpleBottomNavigation() {
           icon={<ListIcon />}
         />
         <BottomNavigationAction
-          label="Accounts"
-          value="/accounts"
+          label="Profile"
+          value="/Profile"
           icon={<AccountBalanceOutlinedIcon />}
         />
         <BottomNavigationAction

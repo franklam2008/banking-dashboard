@@ -14,8 +14,8 @@ export default [
       icon: <DashboardOutlinedIcon />
     },
     {
-      title: "Products",
-      href: "/products",
+      title: "Accounts",
+      href: "/Accounts",
       icon: <ShoppingBasketOutlinedIcon />
     },
     {
@@ -29,8 +29,8 @@ export default [
       icon: <SupervisorAccountOutlinedIcon />
     },
     {
-      title: "Accounts",
-      href: "/accounts",
+      title: "Profile",
+      href: "/Profile",
       icon: <PersonOutlineOutlinedIcon />
     },
     {

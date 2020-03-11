@@ -22,8 +22,8 @@ function App() {
           <Router>
             <Layout>
               <Route exact path="/" component={Dashboard} />
-              <Route path="/Products" component={Products} />
-              <Route path="/Accounts" component={Accounts} />
+              <Route path="/Accounts" component={Products} />
+              <Route path="/Profile" component={Accounts} />
               <Route path="/Transactions" component={Transactions} />
               <Route path="/Contact" component={Contact} />
               <Route path="/Settings" component={Settings} />

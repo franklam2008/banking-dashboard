@@ -3,56 +3,49 @@ import uuid from 'uuid/v1';
 export default [
   {
     id: uuid(),
-    title: 'Dropbox',
+    title: 'Bank of America Saving',
     description:
-      'Dropbox is a file hosting service that offers cloud storage, file synchronization, a personal cloud.',
-    imageUrl: '/images/products/product_1.png',
+      'The Bank of America Corporation is an American multinational investment bank ',
+    imageUrl: '/images/logos/boa.png',
     totalDownloads: '594',
-    updatedAt: '27/03/2019'
+    updatedAt: '27/03/2019',
+    createdAt: '31/03/2019'
   },
   {
     id: uuid(),
-    title: 'Medium Corporation',
+    title: 'Robinhood',
     description:
-      'Medium is an online publishing platform developed by Evan Williams, and launched in August 2012.',
-    imageUrl: '/images/products/product_2.png',
+      'Robinhood Markets, Inc. is a U.S.-based financial services company headquartered in Menlo Park, California. ',
+    imageUrl: '/images/logos/rh.png',
     totalDownloads: '625',
     createdAt: '31/03/2019'
   },
   {
     id: uuid(),
-    title: 'Slack',
+    title: 'Charles Schwab Invest',
     description:
-      'Slack is a cloud-based set of team collaboration tools and services, founded by Stewart Butterfield.',
-    imageUrl: '/images/products/product_3.png',
+      'The Charles Schwab Corporation is an American bank and stock brokerage firm based in San Francisco, California.',
+    imageUrl: '/images/logos/cs.png',
     totalDownloads: '857',
     createdAt: '03/04/2019'
   },
   {
     id: uuid(),
-    title: 'Lyft',
+    title: 'M1 Finance',
     description:
-      'Lyft is an on-demand transportation company based in San Francisco, California.',
-    imageUrl: '/images/products/product_4.png',
+      'M1 Finance is registered with the Securities and Exchange Commission as a broker dealer ',
+    imageUrl: '/images/logos/m1.png',
     totalDownloads: '406',
     createdAt: '04/04/2019'
   },
   {
     id: uuid(),
-    title: 'GitHub',
+    title: 'Wealthfront',
     description:
-      'GitHub is a web-based hosting service for version control of code using Git.',
-    imageUrl: '/images/products/product_5.png',
+      'Wealthfront Inc. is an automated investment service firm based in Palo Alto, California',
+    imageUrl: '/images/logos/wf.png',
     totalDownloads: '835',
     createdAt: '04/04/2019'
   },
-  {
-    id: uuid(),
-    title: 'Squarespace',
-    description:
-      'Squarespace provides software as a service for website building and hosting. Headquartered in NYC.',
-    imageUrl: '/images/products/product_6.png',
-    totalDownloads: '835',
-    createdAt: '04/04/2019'
-  }
+  
 ];

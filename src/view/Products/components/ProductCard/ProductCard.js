@@ -86,7 +86,7 @@ const ProductCard = props => {
               display="inline"
               variant="body2"
             >
-              Updated 2hr ago
+              Created on {product.createdAt}
             </Typography>
           </Grid>
           <Grid
@@ -98,7 +98,7 @@ const ProductCard = props => {
               display="inline"
               variant="body2"
             >
-              {product.totalDownloads} Downloads
+               View Account
             </Typography>
           </Grid>
         </Grid>
