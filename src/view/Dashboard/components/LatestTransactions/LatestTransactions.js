@@ -111,7 +111,7 @@ const LatestTransactions = props => {
       </CardContent>
       <Divider />
       <CardActions className={classes.actions}>
-        <Button color="primary" size="small" variant="text" onClick={()=>{history.push('/orders');}}>
+        <Button color="primary" size="small" variant="text" onClick={()=>{history.push('/Transactions');}}>
           View all <ArrowRightIcon />
         </Button>
       </CardActions>

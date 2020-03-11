@@ -8,7 +8,6 @@ import {
   Grid,
   Typography,
   Avatar,
-  LinearProgress
 } from "@material-ui/core";
 
 import { useStore } from "../../../../Store/UserStore";

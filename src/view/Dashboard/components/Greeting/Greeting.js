@@ -62,7 +62,7 @@ const Greeting = () => {
             className={classes.button}
             startIcon={<BarChartIcon />}
             onClick={() => {
-              history.push("/orders");
+              history.push("/Transactions");
             }}
           >
             ALL Transactions
