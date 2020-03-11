@@ -29,8 +29,8 @@ export default [
       icon: <SupervisorAccountOutlinedIcon />
     },
     {
-      title: "Account",
-      href: "/account",
+      title: "Accounts",
+      href: "/accounts",
       icon: <PersonOutlineOutlinedIcon />
     },
     {
