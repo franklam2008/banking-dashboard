@@ -27,7 +27,7 @@ const Footer = props => {
       <Typography variant="caption">
         Made with{" "}
         <FavoriteIcon style={{ fontSize: 14, transform: "translateY(2px)" }} />{" "}
-        in Orlando, Florida for the environment .
+        in Orlando, Florida for the environment.
       </Typography>
     </div>
   );
