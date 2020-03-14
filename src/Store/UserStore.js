@@ -46,41 +46,7 @@ function reducer(state = defaultState, action = {}) {
       return { ...state, login: false, authUser: [] };
     case "ADD_DATA":
       return { ...state, data: action.payload };
-    case "ADD_POKEMON":
-      return { ...state, db: action.payload };
-    //movies
-    case "ADD_MOVIE":
-      return { ...state, addedMovies: [action.payload, ...state.addedMovies] };
-    case "REMOVE_MOVIE":
-      return {
-        ...state,
-        addedMovies: [
-          ...state.addedMovies.filter(movie => movie.id !== action.payload)
-        ]
-      };
-    case "LOAD_MOVIES":
-      return { ...state, addedMovies: action.payload };
-    //radio
-    case "LOAD_RADIO":
-      return { ...state, radio: action.payload };
-    //corona
-    case "LOAD_CORONA":
-      return { ...state, corona: action.payload }; //corona
-    case "DARKMODE":
-      return { ...state, darkMode: action.payload };
-    //YouTubeChannels
-    case "LOAD_YOUTUBECHANNELS":
-      return { ...state, youTubeChannels: action.payload };
-    //counter
-    case "MINUS1":
-      return { ...state, counter: state.counter - 1 };
-    case "ADD1":
-      return { ...state, counter: state.counter + 1 };
     //log
-    case "InsertOrders":
-      return { ...state, orders: action.payload };
-    //log
-
     case "CHECK_STATE":
       console.log("stateNow", state);
       return { ...state };
