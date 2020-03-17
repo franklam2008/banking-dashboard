@@ -12,27 +12,33 @@ import Test from "./view/Test/Test";
 import Accounts from "./view/Accounts/Accounts";
 import { UserProvider } from "./Store/UserStore";
 import theme from "./theme";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import rootReducer from "./Store/rootReducer";
+const store = createStore(rootReducer);
 const AppCon = styled.div``;
 
 function App() {
   return (
-    <UserProvider>
-      <ThemeProvider theme={theme}>
-        <AppCon>
-          <Router>
-            <Layout>
-              <Route exact path="/" component={Dashboard} />
-              <Route path="/Accounts" component={Products} />
-              <Route path="/Profile" component={Accounts} />
-              <Route path="/Transactions" component={Transactions} />
-              <Route path="/Contact" component={Contact} />
-              <Route path="/Settings" component={Settings} />
-              <Route path="/Test" component={Test} />
-            </Layout>
-          </Router>
-        </AppCon>
-      </ThemeProvider>
-    </UserProvider>
+    <Provider store={store}>
+      <UserProvider>
+        <ThemeProvider theme={theme}>
+          <AppCon>
+            <Router>
+              <Layout>
+                <Route exact path="/" component={Dashboard} />
+                <Route path="/Accounts" component={Products} />
+                <Route path="/Profile" component={Accounts} />
+                <Route path="/Transactions" component={Transactions} />
+                <Route path="/Contact" component={Contact} />
+                <Route path="/Settings" component={Settings} />
+                <Route path="/Test" component={Test} />
+              </Layout>
+            </Router>
+          </AppCon>
+        </ThemeProvider>
+      </UserProvider>
+    </Provider>
   );
 }
 
