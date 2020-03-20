@@ -2,7 +2,7 @@ import React from "react";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
-
+import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
 import { useHistory } from "react-router-dom";
@@ -26,15 +26,10 @@ export default function SimpleList() {
       <Divider />
       <List component="nav" aria-label="secondary mailbox folders">
         <ListItem button>
-          <ListItemText primary="Trash" />
+          <ErrorOutlineIcon />
         </ListItem>
-        <ListItemLink href="#simple-list">
-          <ListItemText primary="Spam" />
-        </ListItemLink>
       </List>
     </div>
   );
-  function ListItemLink(props) {
-    return <ListItem button component="a" {...props} />;
-  }
+
 }

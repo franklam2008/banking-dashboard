@@ -13,25 +13,29 @@ import VSensorjs from "../../components/VisibilitySensor";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import { useSelector, } from "react-redux";
 const Dashboard = () => {
+  const state = useSelector(state => state);
   // const { state } = useStore();
+  const { checking, credit, savingProgress, invest } = state;
   return (
     <div>
       <VSensorjs>
         <Grid container spacing={4}>
           <Greeting />
+      
           <Grid item lg={3} sm={6} xl={3} xs={12}>
-            <Checking />
+            <Checking checking={checking} />
+          </Grid>
+
+          <Grid item lg={3} sm={6} xl={3} xs={12}>
+            <Saving saving={savingProgress} />
           </Grid>
           <Grid item lg={3} sm={6} xl={3} xs={12}>
-            <Saving />
+            <Credit credit={credit} />
           </Grid>
           <Grid item lg={3} sm={6} xl={3} xs={12}>
-            <Credit />
-          </Grid>
-          <Grid item lg={3} sm={6} xl={3} xs={12}>
-            <Investment />
+            <Investment invest={invest} />
           </Grid>
           <Grid item lg={12} md={12} xl={12} xs={12}>
             <Accounts />
@@ -42,7 +46,7 @@ const Dashboard = () => {
           <Grid item lg={4} md={6} xl={3} xs={12}>
             <SpendingChart />
           </Grid>
-        
+
           <Grid item lg={12} md={12} xl={12} xs={12}>
             <LatestTransactions />
           </Grid>

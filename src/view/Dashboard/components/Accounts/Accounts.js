@@ -2,6 +2,11 @@ import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import { makeStyles } from "@material-ui/styles";
+import {
+  useSelector
+  // useDispatch
+} from "react-redux";
+
 const ImgCon = styled.div`
   display: flex;
   justify-content: center;
@@ -51,40 +56,24 @@ const Accounts = () => {
     ]
   };
   const classes = useStyles();
+  const accounts = useSelector(state => state.accounts);
 
   return (
     <div>
       <h3>Accounts</h3>
       <Slider {...settings}>
-        <div>
-          <ImgCon>
-            <img className={classes.img} src="images/logos/rh.png" alt="icon" />
-          </ImgCon>
-        </div>
-        <div>
-          <ImgCon>
-            <img
-              className={classes.img}
-              src="images/logos/boa.png"
-              alt="icon"
-            />
-          </ImgCon>
-        </div>
-        <div>
-          <ImgCon>
-            <img className={classes.img} src="images/logos/wf.png" alt="icon" />
-          </ImgCon>
-        </div>
-        <div>
-          <ImgCon>
-            <img className={classes.img} src="images/logos/cs.png" alt="icon" />
-          </ImgCon>
-        </div>
-        <div>
-          <ImgCon className={classes.imgCon}>
-            <img className={classes.img} src="images/logos/m1.png" alt="icon" />
-          </ImgCon>
-        </div>
+        {accounts.map(account => (
+          <div key={account.id}>
+            <ImgCon>
+              <img
+                className={classes.img}
+                src={account.imageUrl}
+                alt="icon"
+              />
+            </ImgCon>
+          </div>
+        ))}
+      
       </Slider>
     </div>
   );

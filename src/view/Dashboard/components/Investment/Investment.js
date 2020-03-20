@@ -3,7 +3,6 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/styles";
 import { Card, CardContent, Grid, Typography, Avatar } from "@material-ui/core";
-import { useStore } from "../../../../Store/UserStore";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import TrendingUpOutlinedIcon from '@material-ui/icons/TrendingUpOutlined';
 const useStyles = makeStyles(theme => ({
@@ -47,8 +46,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Investment = props => {
-  const { className, ...rest } = props;
-  const { state } = useStore();
+  const { className,invest, ...rest } = props;
 
   const classes = useStyles();
 
@@ -66,7 +64,7 @@ const Investment = props => {
               INVESTMENT
             </Typography>
             <Typography color="inherit" variant="h5">
-              ${state.invest}
+              ${invest}
             </Typography>
             <div className={classes.difference}>
               <ArrowUpwardIcon className={classes.differenceIcon} />

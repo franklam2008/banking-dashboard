@@ -21,9 +21,7 @@ import {
 } from "@material-ui/core";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import { useHistory } from "react-router-dom";
-
-import mockData from "../../../Transactions/data";
-// import { StatusBullet } from 'components';
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles(theme => ({
   root: {},
@@ -52,12 +50,14 @@ const useStyles = makeStyles(theme => ({
 // };
 
 const LatestTransactions = props => {
+  const mockData = useSelector(state => state.transactions);
   const { className, ...rest } = props;
 
   const classes = useStyles();
   let history = useHistory();
-
   const [orders] = useState(mockData);
+
+  // const [orders] = useState(mockData);
 
   return (
     <Card {...rest} className={clsx(classes.root, className)}>

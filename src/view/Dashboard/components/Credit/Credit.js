@@ -4,8 +4,7 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/styles";
 import { Card, CardContent, Grid, Typography, Avatar } from "@material-ui/core";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
-import { useStore } from "../../../../Store/UserStore";
-import CreditCardOutlinedIcon from '@material-ui/icons/CreditCardOutlined';
+import CreditCardOutlinedIcon from "@material-ui/icons/CreditCardOutlined";
 const useStyles = makeStyles(theme => ({
   root: {
     height: "100%"
@@ -41,8 +40,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Credit = props => {
-  const { className, ...rest } = props;
-  const { state } = useStore();
+  const { className, credit, ...rest } = props;
 
   const classes = useStyles();
 
@@ -56,11 +54,10 @@ const Credit = props => {
               color="textSecondary"
               gutterBottom
               variant="h5"
-
             >
               Credit Cards
             </Typography>
-            <Typography variant="h5">${state.credit}</Typography>
+            <Typography variant="h5">${credit}</Typography>
             <div className={classes.difference}>
               <ArrowUpwardIcon className={classes.differenceIcon} />
               <Typography className={classes.differenceValue} variant="body2">

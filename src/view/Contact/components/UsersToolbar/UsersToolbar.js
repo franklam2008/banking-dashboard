@@ -46,7 +46,7 @@ const UsersToolbar = props => {
           color="primary"
           variant="contained"
         >
-          New Order
+          New Contact
         </Button>
       </div>
      

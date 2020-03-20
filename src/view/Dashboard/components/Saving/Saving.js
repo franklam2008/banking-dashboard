@@ -10,7 +10,6 @@ import {
   Avatar,
 } from "@material-ui/core";
 
-import { useStore } from "../../../../Store/UserStore";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 
@@ -56,8 +55,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const SavingProgress = props => {
-  const { className, ...rest } = props;
-  const { state } = useStore();
+  const { className, saving,...rest } = props;
 
   const classes = useStyles();
 
@@ -74,7 +72,7 @@ const SavingProgress = props => {
             >
               Saving Account
             </Typography>
-            <Typography variant="h5">${state.savingProgress}</Typography>
+            <Typography variant="h5">${saving}</Typography>
             <div className={classes.difference}>
               <ArrowUpwardIcon className={classes.differenceIcon} />
               <Typography className={classes.differenceValue} variant="body2">

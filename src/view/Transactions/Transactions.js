@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import clsx from "clsx";
 import moment from "moment";
 import PerfectScrollbar from "react-perfect-scrollbar";
@@ -22,7 +22,10 @@ import {
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import VSensorjs from "../../components/VisibilitySensor";
 
-import mockData from "./data";
+import {
+  useSelector
+  // useDispatch
+} from "react-redux";
 
 const useStyles = makeStyles(theme => ({
   root: {},
@@ -45,12 +48,9 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Transactions = props => {
+  const orders = useSelector(state => state.transactions);
   const { className } = props;
-
   const classes = useStyles();
-
-  const [orders] = useState(mockData);
-
   return (
     <VSensorjs>
       <Card className={clsx(classes.root, className)}>

@@ -1,31 +1,22 @@
-import React, { useState, useEffect } from "react";
-import { useStore } from "../../Store/UserStore";
+import React from "react";
 
-import mockData from "./data";
-import VSensorjs from "../../components/VisibilitySensor"
-import UsersToolbar  from "./components/UsersToolbar/UsersToolbar";
-import UsersTable  from "./components/UsersTable/UsersTable";
-
+import VSensorjs from "../../components/VisibilitySensor";
+import UsersToolbar from "./components/UsersToolbar/UsersToolbar";
+import UsersTable from "./components/UsersTable/UsersTable";
+import {
+  useSelector
+  // useDispatch
+} from "react-redux";
 const UserList = () => {
-  const { state, dispatch } = useStore();
+  const contacts = useSelector(state => state.contacts);
 
-  const [users] = useState(mockData);
-  function click() {
-    console.log("click");
-  }
-  useEffect(() => {
-    dispatch({ type: "InsertOrders", payload: users });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   return (
     <VSensorjs>
-    <div>
-      <UsersToolbar />
-      <UsersTable users={state.orders} />
-      <button onClick={click}> click</button>
-    </div>
+      <div>
+        <UsersToolbar />
+        <UsersTable users={contacts} />
+      </div>
     </VSensorjs>
-
   );
 };
 

@@ -2,10 +2,10 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Typography, Button } from "@material-ui/core";
 import styled from "styled-components";
-import { useStore } from "../../../../Store/UserStore";
 import BarChartIcon from "@material-ui/icons/BarChart";
 import { useHistory } from "react-router-dom";
 import { greeting } from "../../../../helpers/greeting";
+import { useSelector } from "react-redux";
 
 const TitleCon = styled.div`
   display: flex;
@@ -41,8 +41,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Greeting = () => {
+  const name = useSelector(state => state.user.name);
   var greetingWord = greeting();
-  const { state } = useStore();
   let history = useHistory();
   const classes = useStyles();
   return (
@@ -51,7 +51,7 @@ const Greeting = () => {
         <TitleCon>
           <Typography color="textSecondary">Dashboard</Typography>
           <Typography className={classes.title} variant="h4">
-            {greetingWord}, {state.user.name}
+            {greetingWord}, {name}
           </Typography>
           <Typography color="textSecondary" gutterBottom>
             Here's what's happening

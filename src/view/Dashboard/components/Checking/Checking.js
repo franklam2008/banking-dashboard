@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/styles";
 import { Card, CardContent, Grid, Typography, Avatar } from "@material-ui/core";
 import MoneyIcon from "@material-ui/icons/Money";
-import { useStore } from "../../../../Store/UserStore";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 
 const useStyles = makeStyles(theme => ({
@@ -42,8 +41,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Checking = props => {
-  const { className, ...rest } = props;
-  const { state } = useStore();
+  const { className, checking, ...rest } = props;
   const classes = useStyles();
   return (
     <Card {...rest} className={clsx(classes.root, className)}>
@@ -56,9 +54,9 @@ const Checking = props => {
               gutterBottom
               variant="h5"
             >
-              Checking Account
+              Checking Account,
             </Typography>
-            <Typography variant="h5">${state.checking}</Typography>
+            <Typography variant="h5">${checking}</Typography>
             <div className={classes.difference}>
               <ArrowUpwardIcon className={classes.differenceIcon} />
               <Typography className={classes.differenceValue} variant="body2">
