@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import styled from "styled-components";
 import Layout from "./components/Layout/Layout";
 import { ThemeProvider } from "@material-ui/styles";
 import Dashboard from "./view/Dashboard/Dashboard";
@@ -15,13 +14,11 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import Store from "./Store/Store";
 const store = createStore(Store);
-const AppCon = styled.div``;
 
 function App() {
   return (
     <Provider store={store}>
         <ThemeProvider theme={theme}>
-          <AppCon>
             <Router>
               <Layout>
                 <Route exact path="/" component={Dashboard} />
@@ -33,7 +30,6 @@ function App() {
                 <Route path="/Test" component={Test} />
               </Layout>
             </Router>
-          </AppCon>
         </ThemeProvider>
     </Provider>
   );
