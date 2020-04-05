@@ -12,7 +12,7 @@ export default function() {
       <button onClick={() => dispatch({ type: "INCREMENT" })}>add </button>
       <button onClick={() => dispatch({ type: "DECREMENT" })}>minus </button>
       <button onClick={() => dispatch({ type: "CHECK_STATE" })}>
-        CHECK_STATE{" "}
+        CHECK STATE
       </button>
     </div>
   );
