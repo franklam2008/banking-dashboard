@@ -14,7 +14,6 @@ import {
 } from "react-redux";
 const useStyles = makeStyles(theme => ({
   root: {
-    padding: theme.spacing(3)
   },
   content: {
     marginTop: theme.spacing(2)
