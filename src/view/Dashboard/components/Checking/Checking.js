@@ -54,7 +54,7 @@ const Checking = props => {
               gutterBottom
               variant="h5"
             >
-              Checking Account,
+              Checking Account
             </Typography>
             <Typography variant="h5">${checking}</Typography>
             <div className={classes.difference}>
