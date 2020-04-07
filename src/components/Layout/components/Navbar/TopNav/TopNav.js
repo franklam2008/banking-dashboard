@@ -3,7 +3,6 @@ import { fade, makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
@@ -71,8 +70,9 @@ const useStyles = makeStyles(theme => ({
   },
 
   img: {
-    width: 50,
+    width: 200,
     marginRight: 10,
+    filter: 'brightness(0) invert(1)',
     [theme.breakpoints.down("sm")]: {
       display: "none"
     }
@@ -100,10 +100,7 @@ export default function PrimarySearchAppBar({ setOpen }) {
             <MenuIcon />
           </IconButton>
           <Link to="/" className={classes.link}>
-            <img className={classes.img} src="images/garden.png" alt="icon" />
-            <Typography className={classes.title} variant="h6" noWrap>
-              Banking Panel
-            </Typography>
+            <img className={classes.img} src="images/BOALogo.png" alt="icon" />
           </Link>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
