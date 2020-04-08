@@ -71,7 +71,7 @@ const Greeting = () => {
       </Grid>
       <Grid item lg={8} md={6} xl={9} sm={6} xs={12}>
         <ImgCon>
-          <img src="images/undraw_Data_points_ubvs.svg" alt="icon" />
+          <img src="images/undraw_setup_analytics_8qkl.svg" alt="icon" />
         </ImgCon>
       </Grid>
     </>

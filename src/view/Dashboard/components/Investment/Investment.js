@@ -8,7 +8,7 @@ import TrendingUpOutlinedIcon from '@material-ui/icons/TrendingUpOutlined';
 const useStyles = makeStyles(theme => ({
   root: {
     height: "100%",
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.primary.light,
     color: theme.palette.primary.contrastText
   },
   content: {

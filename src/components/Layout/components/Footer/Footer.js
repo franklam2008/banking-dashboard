@@ -12,9 +12,7 @@ const useStyles = makeStyles(theme => ({
 
 const Footer = props => {
   const { className, ...rest } = props;
-
   const classes = useStyles();
-
   return (
     <div {...rest} className={clsx(classes.root, className)}>
       <Typography variant="body1">
@@ -27,7 +25,7 @@ const Footer = props => {
       <Typography variant="caption">
         Made with{" "}
         <FavoriteIcon style={{ fontSize: 14, transform: "translateY(2px)" }} />{" "}
-        in Orlando, Florida for the environment.
+        in Orlando, Florida.
       </Typography>
     </div>
   );
