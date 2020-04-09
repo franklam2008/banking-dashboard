@@ -8,7 +8,6 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import pages from "../Pages/Pages";
 import { useHistory } from "react-router-dom";
-import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
@@ -28,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     textDecoration:'none'
   },
   img: {
-    width: 50,
+    width: '90%',
     marginRight: 10,
    
   },
@@ -62,11 +61,10 @@ export default function SwipeableTemporaryDrawer({ open, setOpen }) {
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
     >
+  
      <Link to="/" className={classes.link}>
-            <img className={classes.img} src="images/garden.png" alt="icon" />
-            <Typography variant="h6" noWrap>
-              Banking Panel
-            </Typography>
+            <img className={classes.img} src="images/BOALogo.png" alt="icon" />
+         
           </Link>
       <List component="nav" aria-label="main mailbox folders">
       <Divider />
