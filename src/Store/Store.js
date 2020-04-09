@@ -18,12 +18,9 @@ const initialState = {
 };
 function rootReducer(state = initialState, action) {
   switch (action.type) {
-    case "INCREMENT":
-      return { ...state, counter: state.counter + 1 };
-    case "DECREMENT":
-      return { ...state, counter: state.counter - 1 };
-    case "CHECKING":
-      return { ...state, checking: "999" };
+   
+    case "CHANGE_CHECKING_NUM":
+      return { ...state, checking: "1,999" };
     case "UPDATE_USER":
       return { ...state, user: action.payload };
     case "CHECK_STATE":
