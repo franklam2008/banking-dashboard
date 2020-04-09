@@ -1,28 +1,16 @@
 import transactonsData from "./transactonsData";
 import accountsData from "./accountsData";
-import uuid from "uuid/v1";
 import contactsData from "./contactsData";
+import userData from "./userData";
+import { balanceData } from "./balanceData";
 
 const initialState = {
   counter: 0,
   transactions: transactonsData,
   accounts: accountsData,
   contacts: contactsData,
-  user: {
-    id: uuid(),
-    name: "Alexa Richardson",
-    progress: 70,
-    address: {
-      country: "USA",
-      state: "Georgia",
-      city: "Atlanta",
-      street: "4894  Lakeland Park Drive",
-    },
-    email: "alexa.richardson@devias.io",
-    phone: "770-635-2682",
-    avatarUrl: "/images/avatars/avatar_2.png",
-    createdAt: 1555016400000,
-  },
+  user: userData,
+  balanceData: balanceData,
   checking: "5,250",
   credit: "1,600",
   savingProgress: "20,600",

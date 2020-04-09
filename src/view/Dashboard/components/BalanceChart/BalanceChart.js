@@ -1,49 +1,47 @@
-import React from 'react';
-import clsx from 'clsx';
-import PropTypes from 'prop-types';
-import { Line } from 'react-chartjs-2';
-import { makeStyles } from '@material-ui/styles';
+import React from "react";
+import clsx from "clsx";
+import PropTypes from "prop-types";
+import { Line } from "react-chartjs-2";
+import { makeStyles } from "@material-ui/styles";
 import {
   Card,
   CardHeader,
   CardContent,
   CardActions,
   Divider,
-  Button
-} from '@material-ui/core';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+  Button,
+} from "@material-ui/core";
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 
-import { options } from './chart';
-import { data } from '../../../../Store/assetChart';
+import { options } from "./chartOptions";
+import {
+  useSelector,
+  // useDispatch
+} from "react-redux";
 
 const useStyles = makeStyles(() => ({
   root: {},
   chartContainer: {
     height: 400,
-    position: 'relative'
+    position: "relative",
   },
   actions: {
-    justifyContent: 'flex-end'
-  }
+    justifyContent: "flex-end",
+  },
 }));
 
-const BalanceChart = props => {
+const BalanceChart = (props) => {
   const { className, ...rest } = props;
 
   const classes = useStyles();
+  const balanceData = useSelector((state) => state.balanceData);
 
   return (
-    <Card
-      {...rest}
-      className={clsx(classes.root, className)}
-    >
+    <Card {...rest} className={clsx(classes.root, className)}>
       <CardHeader
         action={
-          <Button
-            size="small"
-            variant="text"
-          >
+          <Button size="small" variant="text">
             Last Year <ArrowDropDownIcon />
           </Button>
         }
@@ -52,19 +50,12 @@ const BalanceChart = props => {
       <Divider />
       <CardContent>
         <div className={classes.chartContainer}>
-          <Line
-            data={data}
-            options={options}
-          />
+          <Line data={balanceData} options={options} />
         </div>
       </CardContent>
       <Divider />
       <CardActions className={classes.actions}>
-        <Button
-          color="primary"
-          size="small"
-          variant="text"
-        >
+        <Button color="primary" size="small" variant="text">
           Overview <ArrowRightIcon />
         </Button>
       </CardActions>
@@ -73,7 +64,7 @@ const BalanceChart = props => {
 };
 
 BalanceChart.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default BalanceChart;
