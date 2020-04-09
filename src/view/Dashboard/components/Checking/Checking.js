@@ -6,41 +6,42 @@ import { Card, CardContent, Grid, Typography, Avatar } from "@material-ui/core";
 import MoneyIcon from "@material-ui/icons/Money";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    height: "100%"
+    height: "100%",
   },
   content: {
     alignItems: "center",
-    display: "flex"
+    display: "flex",
   },
   title: {
-    fontWeight: 400
+    fontWeight: 400,
   },
   avatar: {
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.primary.lightest,
+    color: theme.palette.lightPurple,
     height: 56,
-    width: 56
+    width: 56,
   },
   icon: {
     height: 32,
-    width: 32
+    width: 32,
   },
   difference: {
     marginTop: theme.spacing(2),
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
   },
   differenceIcon: {
-    color: theme.palette.success.dark
+    color: theme.palette.success.dark,
   },
   differenceValue: {
     color: theme.palette.success.dark,
-    marginRight: theme.spacing(1)
-  }
+    marginRight: theme.spacing(1),
+  },
 }));
 
-const Checking = props => {
+const Checking = (props) => {
   const { className, checking, ...rest } = props;
   const classes = useStyles();
   return (
@@ -79,7 +80,7 @@ const Checking = props => {
 };
 
 Checking.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default Checking;

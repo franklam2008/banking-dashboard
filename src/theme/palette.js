@@ -1,19 +1,23 @@
 import { colors } from '@material-ui/core';
 
 const white = '#FFFFFF';
+const lightPurple = '#595773';
 const black = '#000000';
 const boaRedDark = '#9a0e21';
 const boaRed = '#dd1430';
 const boaRedLight = '#e34359';
+const boaRedLightest = '#f9dde0';
 
 export default {
   black,
   white,
+  lightPurple,
   primary: {
     contrastText: white,
     dark: boaRedDark,
     main: boaRed,
     light: boaRedLight,
+    lightest: boaRedLightest,
   },
   secondary: {
     contrastText: white,

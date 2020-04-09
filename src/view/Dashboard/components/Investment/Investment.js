@@ -34,14 +34,14 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center"
   },
   differenceIcon: {
-    color: theme.palette.success.main
+    color: theme.palette.white
   },
   differenceValue: {
-    color: theme.palette.success.light,
+    color: theme.palette.white,
     marginRight: theme.spacing(1)
   },
   caption: {
-    color: theme.palette.success.light
+    color: theme.palette.white
   }
 }));
 
