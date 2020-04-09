@@ -1,115 +1,55 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import { makeStyles } from '@material-ui/styles';
-import {
-  Card,
-  CardContent,
-  CardActions,
-  Typography,
-  Grid,
-  Divider
-} from '@material-ui/core';
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import GetAppIcon from '@material-ui/icons/GetApp';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 
-const useStyles = makeStyles(theme => ({
-  root: {},
-  imageContainer: {
-    height: 64,
-    width: 64,
-    margin: '0 auto',
-    border: `1px solid ${theme.palette.divider}`,
-    borderRadius: '5px',
-    overflow: 'hidden',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
+const useStyles = makeStyles((theme) => ({
+  root: {
+    maxWidth: 345,
+    margin:'0 auto'
   },
-  image: {
-    width: '100%'
+  media: {
+    height: 140,
+    backgroundSize: "contain",
   },
-  statsItem: {
-    display: 'flex',
-    alignItems: 'center'
-  },
-  statsIcon: {
-    color: theme.palette.icon,
-    marginRight: theme.spacing(1)
-  }
 }));
 
-const AccountCard = props => {
-  const { className, account, ...rest } = props;
+const AccountCard = ({ account }) => {
 
   const classes = useStyles();
 
   return (
-    <Card
-      {...rest}
-      className={clsx(classes.root, className)}
-    >
-      <CardContent>
-        <div className={classes.imageContainer}>
-          <img
-            alt="Product"
-            className={classes.image}
-            src={account.imageUrl}
-          />
-        </div>
-        <Typography
-          align="center"
-          gutterBottom
-          variant="h4"
-        >
-          {account.title}
-        </Typography>
-        <Typography
-          align="center"
-          variant="body1"
-        >
-          {account.description}
-        </Typography>
-      </CardContent>
-      <Divider />
+    <Card className={classes.root}>
+      <CardActionArea>
+        <CardMedia
+          className={classes.media}
+          image={account.imageUrl}
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            {account.title}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {account.description}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
       <CardActions>
-        <Grid
-          container
-          justify="space-between"
-        >
-          <Grid
-            className={classes.statsItem}
-            item
-          >
-            <AccessTimeIcon className={classes.statsIcon} />
-            <Typography
-              display="inline"
-              variant="body2"
-            >
-              Created on {account.createdAt}
-            </Typography>
-          </Grid>
-          <Grid
-            className={classes.statsItem}
-            item
-          >
-            <GetAppIcon className={classes.statsIcon} />
-            <Typography
-              display="inline"
-              variant="body2"
-            >
-               View Account
-            </Typography>
-          </Grid>
-        </Grid>
+        <Button size="small" color="primary">
+          Share
+        </Button>
+        <Button size="small" color="primary">
+          Learn More
+        </Button>
       </CardActions>
     </Card>
   );
-};
-
-AccountCard.propTypes = {
-  className: PropTypes.string,
-  account: PropTypes.object.isRequired
 };
 
 export default AccountCard;
