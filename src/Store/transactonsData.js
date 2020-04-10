@@ -9,7 +9,7 @@ export default [
     createdAt: 1555016400000,
     status: 'pending',
     desc: 'CITI AUTOPATO DES',
-    balance:'8,323.11',
+    balance:'8,323.04',
     type: <AccountBalanceOutlinedIcon />,
   },
   {
@@ -19,7 +19,7 @@ export default [
     createdAt: 1555016400000,
     status: 'delivered',
     desc: 'WELLS FARGO SAVINGS',
-    balance:'9,323.11',
+    balance:'9,323.1',
     type: <AccountBalanceOutlinedIcon />,
   },
   {
@@ -29,7 +29,7 @@ export default [
     createdAt: 1554930000000,
     status: 'refunded',
     desc: 'BKOFAMERICA MOBILE 03/01 231253512',
-    balance:'4,343.11',
+    balance:'4,343.12',
     type: <AccountBalanceOutlinedIcon />,
   },
   {
@@ -39,7 +39,7 @@ export default [
     createdAt: 1554757200000,
     status: 'pending',
     desc: 'ROBINHOOD INVESTMENT 03/11 232333452',
-    balance:'4,353.11',
+    balance:'4,353.41',
     type: <AccountBalanceOutlinedIcon />,
   },
   {
@@ -49,7 +49,7 @@ export default [
     createdAt: 1554670800000,
     status: 'delivered',
     desc: 'BKOFAMERICA MOBILE 03/01 231253512',
-    balance:'6,323.11',
+    balance:'6,323.21',
     type: <AccountBalanceOutlinedIcon />,
   },
   {
@@ -59,7 +59,7 @@ export default [
     createdAt: 1554670800000,
     status: 'delivered',
     desc: 'RENT PAYMENT',
-    balance:'7,323.11',
+    balance:'7,323.01',
     type: <AccountBalanceOutlinedIcon />,
   }
 ];
