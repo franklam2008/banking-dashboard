@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
     height: 140,
-    backgroundSize: "contain",
+    backgroundSize: "150px auto",
   },
 }));
 
@@ -42,11 +42,9 @@ const AccountCard = ({ account }) => {
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
-          Share
+          Detail
         </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
+       
       </CardActions>
     </Card>
   );
