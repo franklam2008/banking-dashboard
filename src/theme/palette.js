@@ -29,19 +29,19 @@ export default {
     contrastText: white,
     dark: colors.green[900],
     main: colors.green[600],
-    light: colors.green[100]
+    light: colors.green[300]
   },
   info: {
     contrastText: white,
     dark: colors.blue[900],
     main: colors.blue[600],
-    light: colors.blue[400]
+    light: colors.blue[200]
   },
   warning: {
     contrastText: white,
     dark: colors.orange[900],
     main: colors.orange[600],
-    light: colors.orange[400]
+    light: colors.orange[200]
   },
   error: {
     contrastText: white,
