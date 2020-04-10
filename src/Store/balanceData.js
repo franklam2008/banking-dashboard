@@ -2,7 +2,6 @@ import palette from '../theme/palette';
 
 export const balanceData = {
   labels: [
-    "Mar",
     "Apr",
     "May",
     "Jun",
@@ -15,6 +14,7 @@ export const balanceData = {
     "Jan",
     "Feb",
     "Mar",
+    "Apr",
   ],
   datasets: [
     {

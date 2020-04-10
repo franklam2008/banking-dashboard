@@ -3,6 +3,7 @@ import accountsData from "./accountsData";
 import contactsData from "./contactsData";
 import userData from "./userData";
 import { balanceData } from "./balanceData";
+import { spendingData,devices } from "./spendingData";
 
 const initialState = {
   counter: 0,
@@ -10,6 +11,8 @@ const initialState = {
   accounts: accountsData,
   contacts: contactsData,
   user: userData,
+  spendingData:spendingData,
+  devices:devices,
   balanceData: balanceData,
   checking: "5,250",
   credit: "1,600",
