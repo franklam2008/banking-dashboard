@@ -9,8 +9,6 @@ export default function () {
 
   return (
     <div>
-      <h2>Example </h2>
-      
       <button onClick={() => dispatch({ type: "CHANGE_CHECKING_NUM" })}>
         CHANGE_CHECKING_NUM{" "}
       </button>
